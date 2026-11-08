@@ -1,4 +1,4 @@
-# mirror · 自我模型框架
+# mirrorme · 自我模型框架
 
 > **给每个人一套搭建自己"自我模型"的框架。**
 > 知识是原料，判断是产物，性格是形状。
@@ -9,12 +9,12 @@
 
 ## 这个仓库是什么
 
-`mirror` 是一个**框架**，不是模板。区别在于：
+`mirrorme` 是一个**框架**，不是模板。区别在于：
 
 | | 模板 | 框架（本项目） |
 |---|---|---|
 | 别人怎么用 | fork，填内容，从此分叉 | 装工具 + 写配置，结构受保护 |
-| 框架升级 | 无法升级 | `mirror upgrade` 迁移数据 |
+| 框架升级 | 无法升级 | `mirrorme upgrade` 迁移数据 |
 | 分类方式 | 写死 | 每个人的 taxonomy 不同 |
 | 能否评测 | 各自为准 | 统一的 F1/F2/F3 保真度评测 |
 
@@ -61,12 +61,13 @@ instance/  实例 —— 某个人的数据（self/、notes/、config）
 
 ```bash
 # 目标形态（M2 之后）
-pip install mirror-selfmodel
-mirror init            # 10 个问题的访谈，生成你的实例
-mirror capture "想法"   # 随手记
-mirror interview       # 每周 20 分钟的 AI 访谈
-mirror check           # 校验数据契约
-mirror eval            # 跑保真度评测
+pip install mirrorme        # 若 PyPI 包名被占，用 mirrorme-selfmodel
+mirrorme init               # 10 个问题的访谈，生成你的实例
+mirrorme capture "想法"      # 随手记
+mirrorme interview          # 每周 20 分钟的 AI 访谈
+mirrorme check              # 校验数据契约
+mirrorme eval               # 跑保真度评测
+mm init                     # 短别名，与 mirrorme init 等价
 ```
 
 ---
@@ -74,7 +75,7 @@ mirror eval            # 跑保真度评测
 ## 仓库结构
 
 ```
-mirror/
+mirrorme/
 ├─ README.md
 ├─ AGENTS.md              # 本仓库对 AI 的指令
 ├─ LICENSE                # MIT（框架）

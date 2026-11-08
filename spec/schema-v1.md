@@ -62,7 +62,7 @@ review_after: 2027-02-08
 | `confidence` | number | ❌ | ✅ | `0–1` | 主观可信度 |
 | `review_after` | date | ❌ | ✅ | `> created` | 到期复核 |
 
-**人工必填只有 3 个**：`title`、`summary`、`domain`。其余由 `mirror new` 自动生成，`mirror check` 自动补齐。
+**人工必填只有 3 个**：`title`、`summary`、`domain`。其余由 `mirrorme new` 自动生成，`mirrorme check` 自动补齐。
 
 ---
 
@@ -108,8 +108,8 @@ x_source_type: podcast
 ## 4. 我的疑问：我还没想明白的地方
 ```
 
-- 第 2/3/4 段由 `mirror check` 校验是否存在（标题匹配即可，内容不设长度要求）
-- 可用 `config.structure.enforce: false` 关闭（**关闭后 F2 无法达成**，`mirror check` 会警告）
+- 第 2/3/4 段由 `mirrorme check` 校验是否存在（标题匹配即可，内容不设长度要求）
+- 可用 `config.structure.enforce: false` 关闭（**关闭后 F2 无法达成**，`mirrorme check` 会警告）
 - 第 4 段写入"暂无"时，条目会进入 `self/unknowns.md`
 
 ---
@@ -133,7 +133,7 @@ x_source_type: podcast
 
 ---
 
-## 7. 校验规则（`mirror check` 必须实现）
+## 7. 校验规则（`mirrorme check` 必须实现）
 
 | # | 规则 | 级别 |
 |---|---|---|

@@ -1,7 +1,7 @@
 # spec/config-v1 —— 实例配置规范
 
 > 版本：**v0.1-draft**
-> 文件：实例仓库根目录的 `kb.config.yml`
+> 文件：实例仓库根目录的 `mirrorme.config.yml`
 > 原则：**配置项越少越好**。每个配置项都意味着一条测试路径和一份文档。
 
 ---
@@ -129,7 +129,7 @@ lifecycle:
 | 3 | domain 数量 3–12 | 少于 3 无分类意义，多于 12 记不住 |
 | 4 | domain `id` 创建后不可改（改名走迁移） | 已有笔记的 frontmatter 引用它 |
 | 5 | `never_export` 优先级高于任何单文件 `visibility: public` | 防误导出 |
-| 6 | `structure.enforce_note_sections: false` 时 `mirror check` 必须警告 | 否则 F2 静默失效 |
+| 6 | `structure.enforce_note_sections: false` 时 `mirrorme check` 必须警告 | 否则 F2 静默失效 |
 
 ---
 
@@ -147,6 +147,6 @@ lifecycle:
 |---|---|---|
 | 新增可选配置项 | minor | 无 |
 | 修改默认值 | minor | 无（但需在 CHANGELOG 标注行为变化） |
-| 删除/重命名配置项 | **major** | `mirror upgrade` 自动改写 `kb.config.yml` |
+| 删除/重命名配置项 | **major** | `mirrorme upgrade` 自动改写 `mirrorme.config.yml` |
 
 **禁止**在实例里写 `# 手工改这行`——所有个性化必须落在配置项上，否则升级会覆盖。
