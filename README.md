@@ -82,9 +82,13 @@ mirrorme/
 ├─ spec/                  # 规范层（核心）
 │  ├─ schema-v1.md        # 内容契约
 │  ├─ config-v1.md        # 实例配置规范
-│  └─ questions-v1.md     # 访谈问题库
+│  ├─ questions-v1.md     # 访谈问题库（规则）
+│  └─ questions-v1.yml    # 访谈问题库（数据）
+├─ templates/             # 8 类模板
+│  ├─ note.md  resource.md  journal.md
+│  ├─ decision.md  position.md  principle.md
+│  └─ moc.md  LEGACY.md
 ├─ engine/                # 引擎层（M2）
-├─ templates/             # 各类文件模板
 ├─ examples/              # 示例实例（脱敏）
 └─ docs/                  # 面向用户的概念与指南
 ```
@@ -93,9 +97,11 @@ mirrorme/
 
 ## 状态
 
-- [x] 设计完成（`/docs` 下的 01–04 号文档）
+- [x] 设计完成（工作区 `/docs` 下的 01–04 号文档）
 - [x] 框架化结构确定（spec / engine / instance 分离）
-- [ ] spec v0.1（正在写）
+- [x] spec v0.1-draft：`schema` / `config` / `questions`
+- [x] `templates/`：8 类模板
+- [ ] `examples/`：示例实例「林一」
 - [ ] 我的实例跑通（M2）
 - [ ] 首次外部试用（M3）
 

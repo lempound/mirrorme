@@ -1,0 +1,204 @@
+# 访谈问题库 · 数据（v0.1-draft）
+# 规范见 spec/questions-v1.md
+# engine 按 spec/questions-v1.md §4 的算法选题
+
+version: 1
+
+init:
+  - id: q-init-01
+    phase: init
+    category: identity
+    text: "你希望我怎么称呼你？"
+    why: "建立称呼，降低后续对话的疏离感"
+    target: "self/identity.md"
+    followups: []
+
+  - id: q-init-02
+    phase: init
+    category: focus
+    text: "你现在最想搞明白的三件事是什么？"
+    why: "用'想搞明白'代替'关心什么'，更容易得到具体主题；同时生成 taxonomy 种子"
+    target: "config.taxonomy + index/domains/"
+    followups:
+      - "这三件里，哪一件最急？"
+
+  - id: q-init-03
+    phase: init
+    category: values
+    text: "过去一年，你做过最不后悔的一个决定是什么？为什么？"
+    why: "价值观只能从真实取舍里反推，不能靠自述"
+    target: "self/values.md + self/decisions/"
+    followups:
+      - "当时放弃了什么？"
+
+  - id: q-init-04
+    phase: init
+    category: principle
+    text: "什么事会让你立刻改变主意？"
+    why: "反例比主张更能定义一个人的判断边界"
+    target: "self/principles.md"
+    followups:
+      - "能举一个真的发生过的例子吗？"
+
+  - id: q-init-05
+    phase: init
+    category: voice
+    text: "你说话有什么口头禅或习惯？"
+    why: "表达指纹是 F3 的基础素材"
+    target: "self/voice.md"
+    followups: []
+
+  - id: q-init-06
+    phase: init
+    category: boundary
+    text: "有没有你明确不想讨论、也不想被代表的部分？"
+    why: "边界即人格；先划红线，避免后续越界"
+    target: "self/unknowns.md + self/LEGACY.md"
+    followups: []
+
+  - id: q-init-07
+    phase: init
+    category: purpose
+    text: "你希望它将来替你回答什么问题？"
+    why: "从使用场景反推保真度目标与评测集"
+    target: "config.fidelity + eval/questions.yml"
+    followups: []
+
+  - id: q-init-08
+    phase: init
+    category: privacy
+    text: "哪些内容永远不能公开？"
+    why: "隐私策略必须在建档时确定，事后补很麻烦"
+    target: "config.privacy.never_export"
+    followups: []
+
+  - id: q-init-09
+    phase: init
+    category: rhythm
+    text: "你打算多久记一次？"
+    why: "承诺要现实；过高的承诺会导致整个体系崩掉"
+    target: "config.fidelity.interview_weekly_minutes"
+    followups: []
+
+  - id: q-init-10
+    phase: init
+    category: tooling
+    text: "你现在用什么 AI 工具？"
+    why: "决定生成哪些入口文件（AGENTS.md / CLAUDE.md / .cursor/rules）"
+    target: "config.agents.targets"
+    followups: []
+
+weekly:
+  - id: q-weekly-01
+    phase: weekly
+    category: 具体
+    text: "最近有没有一件事，你明知道该做却拖着没做？"
+    why: "具体事例最容易还原真实行为模式"
+    target: "notes/ 第 2/3 段"
+    followups:
+      - "当时你在想什么？"
+      - "最后怎么处理的？"
+
+  - id: q-weekly-02
+    phase: weekly
+    category: 反例
+    text: "上周有没有哪次你没按自己一贯的方式做事？"
+    why: "例外的场景往往比常规更能说明原则的边界"
+    target: "self/principles.md"
+    followups: []
+
+  - id: q-weekly-03
+    phase: weekly
+    category: 变迁
+    text: "最近有没有什么想法，和三年前的你完全相反？"
+    why: "捕获成长，生成 position 演化链"
+    target: "self/positions/"
+    followups:
+      - "是什么让你改的？"
+
+  - id: q-weekly-04
+    phase: weekly
+    category: 代价
+    text: "这周你为了坚持什么，放弃过什么？"
+    why: "验证原则是不是真的在起作用"
+    target: "self/principles.md"
+    followups: []
+
+  - id: q-weekly-05
+    phase: weekly
+    category: 情绪
+    text: "这周什么事让你明显有情绪反应？"
+    why: "情绪反应是 affect.md 的唯一可靠来源"
+    target: "self/affect.md"
+    followups:
+      - "是哪种反应：烦、兴奋、还是回避？"
+
+  - id: q-weekly-06
+    phase: weekly
+    category: 边界
+    text: "有没有什么你最近开始不想再讨论的话题？"
+    why: "边界会变，需要持续更新"
+    target: "self/unknowns.md"
+    followups: []
+
+  - id: q-weekly-07
+    phase: weekly
+    category: 溯源
+    text: "最近记住的一个观点，是你自己想的还是从哪看来的？"
+    why: "区分原创与转述，避免把别人的话当成自己的立场"
+    target: "notes/ 第 4 段"
+    followups:
+      - "你同意它哪一部分？"
+
+  - id: q-weekly-08
+    phase: weekly
+    category: 具体
+    text: "这周有没有哪个瞬间，你做了一个很小的决定？"
+    why: "小决定比大决定多，且更容易说真话"
+    target: "self/decisions/"
+    followups:
+      - "为什么选这个而不是另一个？"
+
+decision:
+  - id: q-decision-01
+    phase: decision
+    category: 具体
+    text: "最近有没有做过什么不好回头的决定？"
+    why: "决策日志只在真正的岔路口记录，不追求频率"
+    target: "self/decisions/"
+    followups:
+      - "当时还有哪些选项？"
+      - "你放弃的是什么？"
+
+  - id: q-decision-02
+    phase: decision
+    category: 判断
+    text: "如果现在重来一次，你还会这么选吗？"
+    why: "区分'当时合理'和'现在仍然合理'"
+    target: "self/decisions/ (verdict)"
+    followups: []
+
+probe:
+  - id: q-probe-01
+    phase: probe
+    category: 具体
+    text: "能举个具体例子吗？"
+    why: "最常用、最有效的追问"
+    target: ""
+    followups: []
+
+  - id: q-probe-02
+    phase: probe
+    category: 过程
+    text: "当时你是怎么想的？"
+    why: "结论好记，过程才是判断力"
+    target: ""
+    followups: []
+
+  - id: q-probe-03
+    phase: probe
+    category: 现实
+    text: "你自己实际是怎么做的？"
+    why: "对抗'应该'和'一般来说'这类抽象表述"
+    target: ""
+    followups: []
