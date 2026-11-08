@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# 构建产物
+dist/
+build/
+
+# 索引/向量等生成物
+.mirror/
+index/index.json
+index/tags.md
+index/timeline.md
+
+# 编辑器
+.vscode/
+.idea/
+.DS_Store
+
+# 本地实例（开发时挂在框架仓里跑测试用）
+/local-instance/
