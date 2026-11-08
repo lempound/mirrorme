@@ -70,7 +70,7 @@ privacy:
 
 # ==== 生成物 ====
 agents:
-  targets: [agents-md, claude-md, cursor]
+  targets: [agents-md, claude-md, cursor]   # agents-md | claude-md | cursor | llms-txt
   max_agents_md_lines: 150
 
 index:
@@ -112,7 +112,7 @@ lifecycle:
 | `privacy.default_visibility` | enum | `private` | 新文件默认可见性 |
 | `privacy.never_export[]` | string[] | 见示例 | 路径前缀黑名单，导出时强制排除 |
 | `privacy.blocked_name_patterns[]` | string[] | `[]` | 导出时替换为 `[他人]` |
-| `agents.targets[]` | enum[] | `[agents-md]` | 生成哪些入口文件 |
+| `agents.targets[]` | enum[] | `[agents-md]` | 生成哪些入口文件：`agents-md` / `claude-md` / `cursor` / `llms-txt`（供 ChatGPT 等网页版上传） |
 | `agents.max_agents_md_lines` | int | `150` | 硬上限，超了 CI 失败 |
 | `publish.enabled` | bool | `false` | 是否启用发布 |
 | `structure.enforce_note_sections` | bool | `true` | 关闭将导致 F2 无法达成 |
