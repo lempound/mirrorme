@@ -1,0 +1,65 @@
+# 示例实例配置：林一（虚构人物）
+# 注意：分类维度与参考实例完全不同，但不需要修改框架的 spec
+
+spec_version: 1
+config_version: 1
+
+identity:
+  name: "林一"
+  lang: zh
+  timezone: Asia/Shanghai
+
+taxonomy:
+  max_domains_per_note: 3
+  require_domain: true
+  domains:
+    - id: craft
+      label: 手艺
+      question: 我做得够好吗？
+    - id: body
+      label: 身体
+      question: 我的身体还好吗？
+    - id: people
+      label: 关系
+      question: 我和谁在一起？
+    - id: money
+      label: 钱
+      question: 我能养活自己吗？
+
+modules:
+  projects: false          # 林一不需要 monorepo
+  journal: true
+  resources: true
+  skills: false
+
+fidelity:
+  target: F2
+  interview_weekly_minutes: 15
+  interview_questions_per_session: 3
+
+privacy:
+  default_visibility: private
+  never_export:
+    - self/memory/
+    - self/voice/samples/
+    - self/affect.md
+    - self/LEGACY.md
+
+agents:
+  targets: [agents-md]
+  max_agents_md_lines: 120
+
+index:
+  generate: [tags, timeline, index-json]
+
+publish:
+  enabled: false
+  engine: quartz
+
+structure:
+  enforce_note_sections: true
+  require_resource_annotation: true
+
+lifecycle:
+  seed_ttl_days: 45
+  review_reminder_days: 7

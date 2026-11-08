@@ -1,0 +1,7 @@
+# 版本锁：记录这个实例是用哪版规范/引擎构建的
+# engine_version 为 null 表示手工建库（CLI 尚未实现）
+
+spec_version: 1
+engine_version: null
+built_by: manual
+generated_at: 2026-11-08

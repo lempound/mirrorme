@@ -36,7 +36,7 @@ init:
     category: principle
     text: "什么事会让你立刻改变主意？"
     why: "反例比主张更能定义一个人的判断边界"
-    target: "self/principles.md"
+    target: "self/principles/"
     followups:
       - "能举一个真的发生过的例子吗？"
 
@@ -104,7 +104,7 @@ weekly:
     category: 反例
     text: "上周有没有哪次你没按自己一贯的方式做事？"
     why: "例外的场景往往比常规更能说明原则的边界"
-    target: "self/principles.md"
+    target: "self/principles/"
     followups: []
 
   - id: q-weekly-03
@@ -121,7 +121,7 @@ weekly:
     category: 代价
     text: "这周你为了坚持什么，放弃过什么？"
     why: "验证原则是不是真的在起作用"
-    target: "self/principles.md"
+    target: "self/principles/"
     followups: []
 
   - id: q-weekly-05

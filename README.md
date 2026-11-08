@@ -101,7 +101,8 @@ mirrorme/
 - [x] 框架化结构确定（spec / engine / instance 分离）
 - [x] spec v0.1-draft：`schema` / `config` / `questions`
 - [x] `templates/`：8 类模板
-- [ ] `examples/`：示例实例「林一」
+- [x] `examples/`：示例实例「林一」（4 维度，与参考实例完全不同）
+- [x] 我的实例骨架（`lempound/mirrorme-instance`，private）
 - [ ] 我的实例跑通（M2）
 - [ ] 首次外部试用（M3）
 

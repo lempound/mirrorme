@@ -76,10 +76,34 @@ review_after: 2027-02-08
 | `decision` | 决策记录 | `self/decisions/` | 见 §6 |
 | `position` | 立场（可演化） | `self/positions/` | 必须有 `as_of` |
 | `principle` | 判断原则 | `self/principles/` | 必须有"适用场景 + 反例" |
+| `profile` | 单文件档案 | `self/*.md` | 见 §3.1 |
 | `moc` | 索引笔记 | `index/domains/` | 无 |
 | `skill` | 可执行方法论 | `skills/<name>/SKILL.md` | 遵守 Agent Skills 规范 |
 
 **扩展方式**：不新增 type。任何新形态先用 `type: note` + `tags` 表达，积累 10 个真实用例后再评估是否升级为类型。
+
+### 3.1 `self/` 的两种形态
+
+`self/` 下有两类东西，规则不同：
+
+| 形态 | 文件 | type | 特征 |
+|---|---|---|---|
+| **档案**（单文件） | `identity.md`、`values.md`、`affect.md`、`voice.md`、`unknowns.md`、`LEGACY.md` | `profile` | 每人一份，持续覆盖更新，不进链接图 |
+| **条目**（目录） | `decisions/`、`positions/`、`principles/` | `decision` / `position` / `principle` | 每人多份，有稳定 id，可被引用、可演化 |
+
+判断方法：**能被 `related` 引用、需要 `supersedes` 演化的 → 条目（目录）；描述"我是谁"的整体画像 → 档案（单文件）。**
+
+**id 例外**：`profile` 文件与 `moc` 文件使用固定 id，不受 `YYYYMMDD-slug` 约束：
+
+| 文件 | id |
+|---|---|
+| `self/identity.md` | `self-identity` |
+| `self/values.md` | `self-values` |
+| `self/affect.md` | `self-affect` |
+| `self/voice.md` | `self-voice` |
+| `self/unknowns.md` | `self-unknowns` |
+| `self/LEGACY.md` | `self-legacy` |
+| `index/domains/<domain>.md` | `moc-<domain>` |
 
 ---
 
@@ -137,7 +161,7 @@ x_source_type: podcast
 
 | # | 规则 | 级别 |
 |---|---|---|
-| 1 | `id` 与文件名一致，且全实例唯一 | error |
+| 1 | `id` 与文件名一致（`profile`/`moc` 例外，见 §3.1），且全实例唯一 | error |
 | 2 | 必填字段齐全、类型正确、格式合法 | error |
 | 3 | `domain` 每项存在于 `config.taxonomy.domains` | error |
 | 4 | `related` 指向的 id 存在 | warning |
